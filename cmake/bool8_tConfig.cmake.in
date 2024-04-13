@@ -1,0 +1,36 @@
+@PACKAGE_INIT@
+
+# get a config name
+if(@PROJECT_NAME@_STATIC_LIBRARIES)
+    set(config_name Static)
+else()
+    set(config_name Shared)
+endif()
+
+# include an export targets file
+set(export_targets_file "${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@${config_name}Targets.cmake")
+if(NOT EXISTS "${export_targets_file}")
+    set(@PROJECT_NAME@_FOUND FALSE)
+    set(@PROJECT_NAME@_NOT_FOUND_MESSAGE "Requested export targets file ${export_targets_file} was not found")
+else()
+    include("${export_targets_file}")  
+endif()
+
+# lowercase name of the project
+string(TOLOWER @PROJECT_NAME@ project_lowercase)
+
+# find components
+foreach(component ${@PROJECT_NAME@_FIND_COMPONENTS})
+
+    string(TOUPPER "${component}" UPPER_COMPONENT)
+    set(@PROJECT_NAME@_${UPPER_COMPONENT}_FOUND FALSE)
+
+    if(TARGET @PROJECT_NAME@::${component})
+        set(@PROJECT_NAME@_${UPPER_COMPONENT}_FOUND TRUE)
+    elseif(@PROJECT_NAME@_FIND_REQUIRED_${component})
+        set(@PROJECT_NAME@_FOUND FALSE)
+        set(@PROJECT_NAME@_NOT_FOUND_MESSAGE "Requested component '${component}' \
+                                              is missing in the config defined in ${@PROJECT_NAME@_DIR}.")
+    endif()
+
+endforeach()

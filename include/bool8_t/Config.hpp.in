@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////
+/// \file
+///
+/// \brief Project config file
+///  
+/// This file containes the project version and shared library macros  
+///
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+//
+// @PROJECT_NAME@ library
+//
+// This software is provided 'as-is', without any express or implied warranty.
+// In no event will the authors be held liable for any damages arising from the use of this software.
+//
+// Permission is granted to anyone to use this software for any purpose,
+// including commercial applications, and to alter it and redistribute it freely,
+// subject to the following restrictions:
+//
+// 1. The origin of this software must not be misrepresented;
+//    you must not claim that you wrote the original software.
+//    If you use this software in a product, an acknowledgment
+//    in the product documentation would be appreciated but is not required.
+//
+// 2. Altered source versions must be plainly marked as such,
+//    and must not be misrepresented as being the original software.
+//
+// 3. This notice may not be removed or altered from any source distribution.
+//
+////////////////////////////////////////////////////////////
+
+#ifndef @PROJECT_NAME@_CONFIG_HPP
+#define @PROJECT_NAME@_CONFIG_HPP
+
+#define @PROJECT_NAME@_VERSION_MAJOR @PROJECT_VERSION_MAJOR@
+#define @PROJECT_NAME@_VERSION_MINOR @PROJECT_VERSION_MINOR@
+#define @PROJECT_NAME@_VERSION_PATCH @PROJECT_VERSION_PATCH@
+
+// if the library is shared
+#if !defined(@PROJECT_NAME@_STATIC)
+
+    #if defined(_WIN32) // Windows
+
+        // Windows export flag
+        #if defined(@PROJECT_NAME@_EXPORTS)
+            #define @PROJECT_NAME@_API __declspec(dllexport)    
+        #else
+            #define @PROJECT_NAME@_API __declspec(dllimport)
+        #endif
+
+    #else // Linux, FreeBSD, Mac OS X
+
+        // GCC 4 has special keywords for showing/hidding symbols,
+        // the same keyword is used for both importing and exporting
+        #if (__GNUC__ >= 4)
+            #define @PROJECT_NAME@_API __attribute__ ((__visibility__ ("default")))
+        #else
+            #define @PROJECT_NAME@_API
+        #endif
+
+    #endif
+
+#else
+
+    // static build doesn't need import/export macros
+    #define bool8_t_API 
+
+#endif
+
+
+#endif // @PROJECT_NAME@_CONFIG_HPP
