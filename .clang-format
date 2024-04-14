@@ -1,0 +1,186 @@
+---
+# Language
+Language: Cpp #new
+Standard: c++17
+
+# File
+ColumnLimit: 120
+LineEnding: LF #new
+InsertNewlineAtEOF: true # new
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left # new
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AlignTrailingComments: # new
+    Kind: Always
+    OverEmptyLines: 1
+
+# Allow
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+
+# Break
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false # new
+AlwaysBreakTemplateDeclarations: Yes
+BreakAfterAttributes: Never
+BreakArrays: false # new
+BreakBeforeBinaryOperators: None
+BreakBeforeConceptDeclarations: true
+BreakBeforeInlineASMColon: Always # new
+BreakBeforeTernaryOperators: false # new
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: true
+
+# Indentation
+AccessModifierOffset: -4
+BitFieldColonSpacing: Both
+ContinuationIndentWidth: 4
+IndentAccessModifiers: false # new
+IndentCaseBlocks: false
+IndentCaseLabels: true
+IndentExternBlock: Indent
+IndentGotoLabels: true # new
+IndentPPDirectives: BeforeHash # new
+IndentRequiresClause: false #new
+IndentWidth: 4
+IndentWrappedFunctionNames: true
+LambdaBodyIndentation: Signature # new
+TabWidth: 4
+UseTab: Never
+
+# Initializers & arguments
+BinPackArguments: false 
+BinPackParameters: false 
+PackConstructorInitializers: CurrentLine # new
+ConstructorInitializerIndentWidth: 0
+Cpp11BracedListStyle: true
+
+# Braces
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterCaseLabel: true
+    AfterClass: true
+    AfterControlStatement: Always
+    AfterEnum: true
+    AfterFunction: true
+    AfterNamespace: true
+    AfterStruct: true
+    AfterUnion: true
+    AfterExternBlock: true
+    BeforeCatch: true # new
+    BeforeElse: true
+    BeforeLambdaBody: true
+    BeforeWhile: true # new
+    IndentBraces: false
+    SplitEmptyFunction: true
+    SplitEmptyRecord: true
+    SplitEmptyNamespace: true
+InsertBraces: false	
+
+# Namespaces
+CompactNamespaces: false
+FixNamespaceComments: true
+NamespaceIndentation: All # new
+ShortNamespaceLines: 0
+
+# Derive
+DerivePointerAlignment: false
+
+# Empty lines
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: Always
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 1
+
+# Sorting
+IncludeBlocks: Preserve
+SortIncludes: CaseSensitive # new
+SortUsingDeclarations: Lexicographic # new
+
+# Semicolon
+RemoveSemicolon: true
+
+# Requires
+RequiresClausePosition: OwnLine # new
+RequiresExpressionIndentation: OuterScope # new
+
+# Separate
+SeparateDefinitionBlocks: Always # new
+
+# Alignment
+PointerAlignment: Left
+ReferenceAlignment: Pointer # new
+
+# Qualifiers (const, volatile, static, etc)
+QualifierAlignment: Custom
+QualifierOrder: ['friend', 'static', 'inline', 'constexpr', 'const', 'volatile', 'restrict', 'type'] # new
+
+# Comments
+ReflowComments: true
+
+# Spaces
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceAroundPointerQualifiers: Default
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+SpacesInContainerLiterals: false
+SpacesInLineCommentPrefix: # new
+    Minimum: 1
+    Maximum: 1
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# JSON
+SpaceBeforeJsonColon: true # new
+
+---
+
+# Language
+Language: ObjC
+
+# File
+ColumnLimit: 120
+LineEnding: LF #new
+InsertNewlineAtEOF: true # new
+
+IndentWidth: 4
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterObjCDeclaration: true
+
+ObjCBinPackProtocolList: Never
+ObjCBlockIndentWidth: 4
+ObjCBreakBeforeNestedBlockParam: true
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: false
+
+...
