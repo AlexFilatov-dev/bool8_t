@@ -4,10 +4,10 @@
 
 int main()
 {
-    std::cout << "Size of the bool8_t class : " << sizeof(bool8_t) << " byte\n";
+    std::cout << "Size of the bool8_t class : " << sizeof(bool8_t::bool8_t) << " byte\n";
 
     // create an default instance. All flags is false
-    bool8_t bool8;
+    bool8_t::bool8_t bool8;
 
     // change the flags
     bool8.flag0 = true;
